@@ -1,63 +1,83 @@
 #include <stdio.h>
 
-int main() {
-    const int movimentosBispo = 5;
-
-    printf("=== Movimento do Bispo ===\n");
-
-    for (int i = 0; i < movimentosBispo; i++) {
-        printf("Cima, Direita\n");
+void moverTorre(int casas) {
+    if (casas == 0) {
+        return;
     }
 
-    printf("\n");
+    printf("Direita\n");
 
+    moverTorre(casas - 1);
+}
 
-    const int movimentosTorre = 5;
-    int contadorTorre = 0;
-
-    printf("=== Movimento da Torre ===\n");
-
-    while (contadorTorre < movimentosTorre) {
-        printf("Direita\n");
-        contadorTorre++;
+void moverRainha(int casas) {
+    if (casas == 0) {
+        return;
     }
 
-    printf("\n");
+    printf("Esquerda\n");
 
+    moverRainha(casas - 1);
+}
 
-    const int movimentosRainha = 8;
-    int contadorRainha = 0;
+void moverBispo(int casas) {
+    if (casas == 0) {
+        return;
+    }
 
-    printf("=== Movimento da Rainha ===\n");
+    for (int i = 0; i < 1; i++) {
 
-    do {
-        printf("Esquerda\n");
-        contadorRainha++;
-    } while (contadorRainha < movimentosRainha);
+        int j = 0;
 
-    printf("\n");
-
-
-    const int movimentosBaixo = 2;
-    const int movimentosEsquerda = 1;
-
-    printf("=== Movimento do Cavalo ===\n");
-
-    for (int i = 0; i < movimentosBaixo; i++) {
-
-        int controle = 0;
-
-        while (controle < 1) {
-            printf("Baixo\n");
-            controle++;
+        while (j < 1) {
+            printf("Cima, Direita\n");
+            j++;
         }
     }
 
-    int contadorCavalo = 0;
+    moverBispo(casas - 1);
+}
 
-    while (contadorCavalo < movimentosEsquerda) {
-        printf("Esquerda\n");
-        contadorCavalo++;
+int main() {
+
+    printf("=== Movimento do Bispo ===\n");
+
+    moverBispo(5);
+
+    printf("\n");
+
+    printf("=== Movimento da Torre ===\n");
+
+    moverTorre(5);
+
+    printf("\n");
+
+    printf("=== Movimento da Rainha ===\n");
+
+    moverRainha(8);
+
+    printf("\n");
+
+    printf("=== Movimento do Cavalo ===\n");
+
+    for (int i = 1, j = 1; i <= 2 && j <= 2; i++, j++) {
+
+        if (i == 0) {
+            continue;
+        }
+
+        printf("Cima\n");
+
+        if (i == 2) {
+            break;
+        }
+    }
+
+    int direita = 0;
+
+    while (direita < 1) {
+        printf("Direita\n");
+        direita++;
     }
 
     return 0;
