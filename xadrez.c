@@ -1,12 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    // ================================
-    // MOVIMENTAÇÃO DO BISPO
-    // 5 casas na diagonal superior direita
-    // Utilizando estrutura FOR
-    // ================================
-
     const int movimentosBispo = 5;
 
     printf("=== Movimento do Bispo ===\n");
@@ -15,15 +9,8 @@ int main() {
         printf("Cima, Direita\n");
     }
 
-    // Quebra de linha para organização
     printf("\n");
 
-
-    // ================================
-    // MOVIMENTAÇÃO DA TORRE
-    // 5 casas para a direita
-    // Utilizando estrutura WHILE
-    // ================================
 
     const int movimentosTorre = 5;
     int contadorTorre = 0;
@@ -35,15 +22,8 @@ int main() {
         contadorTorre++;
     }
 
-    // Quebra de linha para organização
     printf("\n");
 
-
-    // ================================
-    // MOVIMENTAÇÃO DA RAINHA
-    // 8 casas para a esquerda
-    // Utilizando estrutura DO-WHILE
-    // ================================
 
     const int movimentosRainha = 8;
     int contadorRainha = 0;
@@ -55,9 +35,30 @@ int main() {
         contadorRainha++;
     } while (contadorRainha < movimentosRainha);
 
+    printf("\n");
 
-    // ================================
-    // FIM DO PROGRAMA
-    // ================================
+
+    const int movimentosBaixo = 2;
+    const int movimentosEsquerda = 1;
+
+    printf("=== Movimento do Cavalo ===\n");
+
+    for (int i = 0; i < movimentosBaixo; i++) {
+
+        int controle = 0;
+
+        while (controle < 1) {
+            printf("Baixo\n");
+            controle++;
+        }
+    }
+
+    int contadorCavalo = 0;
+
+    while (contadorCavalo < movimentosEsquerda) {
+        printf("Esquerda\n");
+        contadorCavalo++;
+    }
+
     return 0;
 }
